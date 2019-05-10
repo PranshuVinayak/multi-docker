@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t pranshuvinayak/test:latest -f ./client/Dockerfile.dev ./client
+  - docker build -t pranshuvinayak/test -f ./client/Dockerfile.dev ./client
 
 scripts:
-  - docker run pranshuvinayak/test:latest npm test -- --coverage
+  - docker run pranshuvinayak/test npm test -- --coverage
 
 after_success:
   - docker build -t pranshuvinayak/multi-client ./client
