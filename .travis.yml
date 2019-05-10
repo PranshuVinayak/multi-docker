@@ -18,7 +18,7 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # Push the Images to Docker Hub
-- docker push pranshuvinayak/multi-client
-- docker push pranshuvinayak/multi-nginx
-- docker push pranshuvinayak/multi-server
-- docker push pranshuvinayak/multi-worker
+  - docker push pranshuvinayak/multi-client
+  - docker push pranshuvinayak/multi-nginx
+  - docker push pranshuvinayak/multi-server
+  - docker push pranshuvinayak/multi-worker
