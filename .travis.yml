@@ -22,3 +22,16 @@ after_success:
   - docker push pranshuvinayak/multi-nginx
   - docker push pranshuvinayak/multi-server
   - docker push pranshuvinayak/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "multi-docker"
+  env: "MultiDocker-env"
+  bucket_name: "elasticbeanstalk-us-east-2-367199001921"
+  bucket_path: "multi-docker"
+  on:
+    branch: master
+  access_key_id: $ACCESSKEYID
+  secret_access_key:
+secure: "$SECRETACCESSKEY"
